@@ -4,6 +4,8 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Q", function()
 	hs.alert.show("Made with love by: Brian Sukhnandan ツ!!")
 end)
 
+-- * Tiling
+
 -- * Left
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
 	local win = hs.window.focusedWindow()
@@ -102,7 +104,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
         win:setFrame(f)
 end)
 
---* Bottom-Half
+-- * Bottom-Half
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
         local win = hs.window.focusedWindow()
         local f = win:frame()
@@ -116,6 +118,27 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
         win:setFrame(f)
 end)
 
+
+
+
+--- A function to open apps.
+function open(name)
+    return function()
+        hs.application.launchOrFocus(name)
+        if name == 'Finder' then
+            hs.appfinder.appFromName(name):activate()
+        end
+    end
+end
+
+hs.hotkey.bind({"cmd"}, "return", open("iTerm"))
+hs.hotkey.bind({"cmd", "shift"}, "H", open("Finder"))
+hs.hotkey.bind({"cmd", "shift"}, "D", open("Discord"))
+hs.hotkey.bind({"cmd", "shift"}, "F", open("Firefox"))
+hs.hotkey.bind({"cmd", "shift"}, "S", open("Spotify"))
+
+
+--- Reload config
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 	hs.reload()
 end)
