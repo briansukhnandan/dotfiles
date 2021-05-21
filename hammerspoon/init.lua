@@ -1,4 +1,4 @@
-gap = 3
+gap = 10
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Q", function()
 	hs.alert.show("Made with love by: Brian Sukhnandan ツ!!")
@@ -13,10 +13,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
 	local screen = win:screen()
 	local max = screen:frame()
 
-	f.x = max.x + gap - 1
+	f.x = max.x + gap
 	f.y = max.y + gap
-	f.w = max.w / 2 - (gap) - 1
-	f.h = max.h - (gap)
+	f.w = max.w / 2 - gap - (gap/2)
+	f.h = max.h - gap - (gap)
 	win:setFrame(f)
 end)
 
@@ -27,10 +27,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function()
 	local screen = win:screen()
 	local max = screen:frame()
 
-	f.x = max.x + (max.w / 2) + gap - 1
+	f.x = max.x + (max.w / 2) + (gap/2)
 	f.y = max.y + gap
-	f.w = max.w / 2 - (gap) - 1
-	f.h = max.h - (gap)
+	f.w = max.w / 2 - (gap) - (gap/2)
+	f.h = max.h - (gap) - gap
 	win:setFrame(f)
 end)
 
@@ -41,10 +41,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "U", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x + gap - 1
+        f.x = max.x + gap
         f.y = max.y + gap
-        f.w = max.w / 2 - gap - 1
-        f.h = max.h / 2 - gap
+        f.w = max.w / 2 - gap - (gap/2)
+        f.h = max.h / 2 - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -55,10 +55,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "M", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x + gap - 1
-        f.y = max.y + (max.h / 2) + gap
-        f.w = max.w / 2 - gap - 1
-        f.h = max.h / 2 - gap
+        f.x = max.x + gap
+        f.y = max.y + (max.h / 2) + (gap/2)
+	f.w = max.w / 2 - gap - (gap/2)	
+        f.h = max.h / 2 - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -69,10 +69,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "O", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x + (max.w / 2) + gap - 1
+        f.x = max.x + (max.w / 2) + (gap/2)
         f.y = max.y + gap
-        f.w = max.w / 2 - gap - 1
-        f.h = max.h / 2 - gap
+        f.w = max.w / 2 - gap - (gap/2)
+        f.h = max.h / 2 - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -83,10 +83,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ".", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x + (max.w / 2) + gap - 1
-        f.y = max.y + (max.h / 2) + gap
-        f.w = max.w / 2 - gap - 1
-        f.h = max.h / 2 - gap
+        f.x = max.x + (max.w / 2) + (gap/2)
+        f.y = max.y + (max.h / 2) + (gap/2)
+        f.w = max.w / 2 - gap - (gap/2)
+        f.h = max.h / 2 - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -97,10 +97,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w
-        f.h = max.h / 2
+        f.x = max.x + gap
+        f.y = max.y + gap
+        f.w = max.w - gap - gap
+        f.h = (max.h / 2) - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -111,10 +111,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
         local screen = win:screen()
         local max = screen:frame()
 
-        f.x = max.x
-        f.y = max.y + (max.h / 2)
-        f.w = max.w
-        f.h = max.h / 2
+        f.x = max.x + gap 
+        f.y = max.y + (max.h / 2) + (gap/2)
+        f.w = max.w - gap - gap
+        f.h = max.h / 2 - gap - (gap/2)
         win:setFrame(f)
 end)
 
@@ -136,6 +136,12 @@ hs.hotkey.bind({"cmd", "shift"}, "H", open("Finder"))
 hs.hotkey.bind({"cmd", "shift"}, "D", open("Discord"))
 hs.hotkey.bind({"cmd", "shift"}, "F", open("Firefox"))
 hs.hotkey.bind({"cmd", "shift"}, "S", open("Spotify"))
+
+
+--- Window switching
+switcher = hs.window.switcher.new()
+
+hs.hotkey.bind('cmd','tab',hs.window.switcher.nextWindow)
 
 
 --- Reload config
