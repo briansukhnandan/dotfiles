@@ -118,7 +118,19 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
         win:setFrame(f)
 end)
 
+-- * Tiled fullscreen position
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "space", function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
 
+        f.x = max.x + gap 
+        f.y = max.y + gap
+        f.w = max.w - gap - gap
+        f.h = max.h - gap - gap
+        win:setFrame(f)
+end)
 
 
 --- A function to open apps.
@@ -148,5 +160,5 @@ hs.hotkey.bind('cmd','tab',hs.window.switcher.nextWindow)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 	hs.reload()
 end)
-hs.alert.show("Reloaded Hammerspoon Config.")
+hs.alert.show("Tiling WM enabled!")
 
