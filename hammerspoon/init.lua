@@ -1,4 +1,4 @@
-gap = 10
+gap = 6
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Q", function()
 	hs.alert.show("Made with love by: Brian Sukhnandan ツ!!")
@@ -119,7 +119,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, ",", function()
 end)
 
 -- * Tiled fullscreen position
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "space", function()
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", function()
         local win = hs.window.focusedWindow()
         local f = win:frame()
         local screen = win:screen()
@@ -132,6 +132,33 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "space", function()
         win:setFrame(f)
 end)
 
+-- * A personally appealing tiling position
+        -- * top-left half a little over 3/4 size
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "N", function()
+        local win = hs.window.focusedWindow()
+        local f = win:frame()
+        local screen = win:screen()
+        local max = screen:frame()
+
+        f.x = max.x + gap
+        f.y = max.y + (max.h / 2) + (max.h / 4) + (max.h / 12) + (gap/2)
+	f.w = max.w / 2 - gap - (gap/2)	
+        f.h = (max.h / 2) - (max.h / 4) - (max.h / 12) - gap - (gap/2)
+        win:setFrame(f)
+end)
+        -- * bottom-left under 1/4 size
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Y", function()
+	local win = hs.window.focusedWindow()
+	local f = win:frame()
+	local screen = win:screen()
+	local max = screen:frame()
+
+	f.x = max.x + gap
+	f.y = max.y + gap
+	f.w = max.w / 2 - gap - (gap/2)
+	f.h = max.h - (max.h / 4) + (max.h / 12) - gap - (gap)
+	win:setFrame(f)
+end)
 
 --- A function to open apps.
 function open(name)
