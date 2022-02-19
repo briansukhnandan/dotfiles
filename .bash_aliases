@@ -1,4 +1,6 @@
+alias c="clear"
 alias dt="cd ~/Desktop"
+alias please="sudo"
 alias docs="cd ~/Documents"
 alias repos="cd ~/Documents/Git_Repositories"
 alias c="clear"

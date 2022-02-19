@@ -19,6 +19,7 @@ PROMPT='%F{cyan}[%f%F{red}%n%f%F{yellow}@%f%F{green}m%f%F{green}e%f%F{blue}r%f%F
 # aliases
 alias c='clear'
 alias docs='cd ~/Documents'
+alias please='sudo'
 alias repos='cd ~/Documents/Git_Repositories'
 alias mysql='/usr/local/mysql/bin/mysql'
 alias run_mysql='mysql -u root -p'
