@@ -1,4 +1,3 @@
-alias c="clear"
 alias dt="cd ~/Desktop"
 alias please="sudo"
 alias docs="cd ~/Documents"
