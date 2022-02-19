@@ -20,6 +20,10 @@ PROMPT='%F{cyan}[%f%F{red}%n%f%F{yellow}@%f%F{green}m%f%F{green}e%f%F{blue}r%f%F
 alias c='clear'
 alias docs='cd ~/Documents'
 alias repos='cd ~/Documents/Git_Repositories'
+alias mysql='/usr/local/mysql/bin/mysql'
+alias run_mysql='mysql -u root -p'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# bazel
+export PATH="$PATH:$HOME/bin"
