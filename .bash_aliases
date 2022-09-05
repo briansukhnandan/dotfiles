@@ -1,7 +1,0 @@
-alias dt="cd ~/Desktop"
-alias please="sudo"
-alias docs="cd ~/Documents"
-alias repos="cd ~/Documents/Git_Repositories"
-alias c="clear"
-alias mysql="/usr/local/mysql/bin/mysql"
-alias run_mysql="mysql -u root -p"
