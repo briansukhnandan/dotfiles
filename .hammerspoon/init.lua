@@ -160,29 +160,6 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Y", function()
 	win:setFrame(f)
 end)
 
---- A function to open apps.
-function open(name)
-    return function()
-        hs.application.launchOrFocus(name)
-        if name == 'Finder' then
-            hs.appfinder.appFromName(name):activate()
-        end
-    end
-end
-
-hs.hotkey.bind({"cmd"}, "return", open("iTerm"))
-hs.hotkey.bind({"cmd", "shift"}, "H", open("Finder"))
-hs.hotkey.bind({"cmd", "shift"}, "D", open("Discord"))
-hs.hotkey.bind({"cmd", "shift"}, "F", open("Firefox"))
-hs.hotkey.bind({"cmd", "shift"}, "S", open("Spotify"))
-
-
---- Window switching
-switcher = hs.window.switcher.new()
-
-hs.hotkey.bind('cmd','tab',hs.window.switcher.nextWindow)
-
-
 --- Reload config
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 	hs.reload()
